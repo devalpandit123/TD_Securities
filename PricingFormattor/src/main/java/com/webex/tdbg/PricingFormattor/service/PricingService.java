@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PricingService {
     public static final int PRICING_CONSTANT = 32;
+    private static Logger logger = LoggerFactory.getLogger(PricingService.class);
 
     public static String dollarPriceConvertor(double dollar) {
         String finalConvertedValue = "";
@@ -31,12 +32,12 @@ public class PricingService {
             newConvention = String.valueOf(Double.parseDouble(decimalPart) * PRICING_CONSTANT);
             int index = newConvention.indexOf(".");
             newConventionSubString = newConvention.substring(0, index);
-            System.out.println(newConventionSubString);
+            
 
             if (Integer.parseInt(newConventionSubString) < 10){
                 newConventionSubString = "0" + newConventionSubString;
             }
-
+            logger.info("Check substring value: {}", newConventionSubString);
             //Step 4: Integrate with integerPart with "-"
 
             finalConvertedValue = intValue + "-" + newConventionSubString;
