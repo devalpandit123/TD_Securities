@@ -23,7 +23,7 @@ You will see the converted value on the browser screen.
 
 :::note
 
-I didnt get time to submit the unit tests. But I can submit them by the end of the day.
+I didnt get time to create all the unit tests so could submit only few.
 
 :::
 
